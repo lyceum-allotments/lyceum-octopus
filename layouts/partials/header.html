@@ -38,10 +38,8 @@
 			</div>
 		</div>
 		<div class="container">
-			{{ with  .Site.Params.headerimg }}
 			<div class="row">
 				<div class="twelve columns" >
-					<img class="u-max-full-width" src="{{ $.Site.BaseURL }}/img/{{ . }}">
+                    <img class="u-max-full-width" src="{{ $.Site.BaseURL }}/img/{{ if .Params.image }}{{ .Params.image }}{{ else }}{{ .Site.Params.headerimg }}{{ end }}">
 				</div>
 			</div>
-			{{ end }}
